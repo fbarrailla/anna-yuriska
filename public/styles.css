@@ -387,12 +387,13 @@ a {
   opacity: .75;
 }
 
-/* By-day grid layout (5 photos) */
+/* By-day grid layout */
 .grid--day .card--feature  { grid-column: span 7; aspect-ratio: 1 / 1; }
 .grid--day .card--tall:nth-of-type(2) { grid-column: span 5; aspect-ratio: 4 / 5; }
 .grid--day .card--tall:nth-of-type(3) { grid-column: span 5; aspect-ratio: 4 / 5; }
 .grid--day .card--wide     { grid-column: span 7; aspect-ratio: 7 / 6; }
 .grid--day .card--regular  { grid-column: span 12; aspect-ratio: 16 / 9; }
+.grid--day .card--portrait { grid-column: span 6; aspect-ratio: 4 / 5; }
 
 /* By-night grid layout (8 photos) */
 .grid--night .card--feature { grid-column: span 12; aspect-ratio: 21 / 9; }
@@ -408,6 +409,7 @@ a {
 @media (max-width: 900px) {
   .grid--day  > .card { grid-column: span 12 !important; aspect-ratio: 4 / 3 !important; }
   .grid--day  .card--tall { aspect-ratio: 4 / 5 !important; }
+  .grid--day  .card--portrait { aspect-ratio: 4 / 5 !important; }
   .grid--night > .card { grid-column: span 12 !important; }
   .grid--night .card--feature { aspect-ratio: 4 / 3 !important; }
   .grid--night .card--tall    { aspect-ratio: 4 / 5 !important; }
