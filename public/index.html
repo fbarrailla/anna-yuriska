@@ -22,6 +22,7 @@
     <nav class="topnav">
       <a href="#by-day">By Day</a>
       <a href="#by-night">By Night</a>
+      <a href="#guestbook">Guestbook</a>
       <a href="#colophon">About</a>
     </nav>
   </header>
@@ -328,6 +329,43 @@
       </div>
     </section>
 
+    <!-- Guestbook -->
+    <section class="guestbook" id="guestbook">
+      <div class="guestbook__inner">
+        <span class="guestbook__no">Postscript</span>
+        <h3 class="guestbook__title">A page for visitors</h3>
+        <p class="guestbook__intro">
+          If you&rsquo;ve read this far &mdash; leave a word. Anything: a place you&rsquo;ve been, a memory it stirred, a simple hello.
+        </p>
+
+        <form class="guestbook__form" id="guestbook-form" novalidate>
+          <div class="guestbook__field">
+            <label for="gb-name">Name</label>
+            <input id="gb-name" name="name" type="text" maxlength="60" required autocomplete="name" placeholder="Your name" />
+          </div>
+          <div class="guestbook__field">
+            <label for="gb-message">Note</label>
+            <textarea id="gb-message" name="message" maxlength="500" required rows="3" placeholder="A line, or a few."></textarea>
+          </div>
+          <div class="guestbook__hp" aria-hidden="true">
+            <label for="gb-website">Website (leave blank)</label>
+            <input id="gb-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <div class="guestbook__actions">
+            <button type="submit" class="guestbook__submit" id="gb-submit">
+              <span>Leave a note</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 12h13m0 0l-5-5m5 5l-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <span class="guestbook__status" id="gb-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+
+        <ol class="guestbook__list" id="guestbook-list" aria-live="polite"></ol>
+        <p class="guestbook__empty" id="guestbook-empty" hidden>No notes yet &mdash; be the first.</p>
+        <p class="guestbook__loading" id="guestbook-loading">Loading notes&hellip;</p>
+      </div>
+    </section>
+
     <!-- Colophon -->
     <section class="colophon" id="colophon">
       <div class="colophon__inner">
@@ -372,6 +410,8 @@
     </figure>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="guestbook.js" defer></script>
 </body>
 </html>
